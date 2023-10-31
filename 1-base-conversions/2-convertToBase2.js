@@ -3,7 +3,14 @@
 /******************************************************************************/
 
 const convertToBase2 = element => {
-  // Your code here 
+  // Your code here
+  if (typeof element === "number") {
+    return `0b` + element.toString(2)
+  } else {
+    let decimal = parseInt(element, 16)
+    return `0b` + decimal.toString(2)
+  }
+
 };
 
 /******************************************************************************/
