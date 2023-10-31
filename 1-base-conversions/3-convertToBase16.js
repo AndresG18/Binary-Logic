@@ -3,7 +3,13 @@
 /******************************************************************************/
 
 const convertToBase16 = element => {
-  // Your code here 
+  // Your code here
+  if (typeof element === "number") {
+    return `0x` + element.toString(16)
+    // return parseInt(element, 16)
+  } else if (element.includes("0b")) {
+    return `0x` + parseInt(element.substring(2), 2).toString(16)
+  }
 };
 
 /******************************************************************************/

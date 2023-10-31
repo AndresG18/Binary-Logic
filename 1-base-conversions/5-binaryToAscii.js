@@ -22,7 +22,27 @@ const binaryStringToArray = str => {
 };
 
 const binaryToAscii = str => {
-  // Your code here 
+  // Your code here
+  // put str into helper function, returns array of 8digit binaries
+  // change to decimal using parseInt
+  // change to ascii using str.fromcharCodeAt(index)
+  // console.log(binaryStringToArray(str))
+
+  let binArr = binaryStringToArray(str) // array of 8digit bin
+  let ascii = ""
+  let decimals = []
+
+  for (let el of binArr) {
+    decimals.push(parseInt(el, 2)) // [98, 99, 100]
+  }
+  // console.log(decimals)
+  for (let i = 0; i < decimals.length; i++) {
+    ascii += String.fromCharCode(decimals[i])
+  }
+
+  return ascii
+  // return String.fromCharCode(decimals).join("")
+
 };
 
 /******************************************************************************/
