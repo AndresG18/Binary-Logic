@@ -3,7 +3,13 @@
 /******************************************************************************/
 
 const convertToBase10 = str => {
-  // Your code here 
+  // Your code here
+  if (str.includes('0b')) { //binary
+    return parseInt(str.substring(2), 2)
+  } else if (str.includes('0x')) {
+    return parseInt(str, 16)
+  }
+
 };
 
 /******************************************************************************/
